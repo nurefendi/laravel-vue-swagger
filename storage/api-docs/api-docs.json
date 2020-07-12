@@ -1,0 +1,72 @@
+{
+    "swagger": "2.0",
+    "info": {
+        "title": "This is my website cool API",
+        "description": "Api description...",
+        "termsOfService": "",
+        "contact": {
+            "email": "contact@mysite.com"
+        },
+        "license": {
+            "name": "Private License",
+            "url": "URL to the license"
+        },
+        "version": "1.0.0"
+    },
+    "host": "localhost:8000/api",
+    "basePath": "/",
+    "schemes": [
+        "http",
+        "https"
+    ],
+    "paths": {
+        "/greet": {
+            "post": {
+                "tags": [
+                    "User actions"
+                ],
+                "summary": "Perform user sign in",
+                "description": "login user using request data",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "login user",
+                        "in": "body",
+                        "description": "JSON Object which login user",
+                        "required": true,
+                        "schema": {
+                            "properties": {
+                                "email": {
+                                    "description": "Handle a login request to the application.",
+                                    "type": "string",
+                                    "example": "user@mail.com"
+                                },
+                                "password": {
+                                    "description": "Handle a login request to the application.",
+                                    "type": "string",
+                                    "example": "password"
+                                }
+                            },
+                            "type": "object"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Return token or error message"
+                    }
+                }
+            }
+        }
+    },
+    "definitions": {},
+    "externalDocs": {
+        "description": "Find out more about my website",
+        "url": "http..."
+    }
+}
